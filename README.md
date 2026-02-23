@@ -162,8 +162,6 @@ Add the following:
 OPENAI_API_KEY = "your_api_key_here"
 ```
 
-⚠️ Do NOT push this file to GitHub.
-
 ---
 
 ### 5️. Run the Application
