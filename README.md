@@ -26,7 +26,7 @@ The objective is not just prediction — but **strategic decision-making support
 
 ## 🧠 Core Features
 
-### 1️⃣ Model Training Engine
+### 1️. Model Training Engine
 
 Supports multiple machine learning algorithms:
 
@@ -48,7 +48,7 @@ Session state management ensures that trained models and results remain availabl
 
 ---
 
-### 2️⃣ Dashboard & Prediction Module
+### 2️. Dashboard & Prediction Module
 
 - Customer-level churn probability scoring
 - Predicted churn classification
@@ -60,7 +60,7 @@ Designed to give stakeholders clear and understandable insights.
 
 ---
 
-### 3️⃣ AI Strategy Generator
+### 3️. AI Strategy Generator
 
 Integrated with OpenAI API to generate:
 
@@ -200,12 +200,12 @@ It enables proactive retention strategies instead of reactive churn handling.
 
 ---
 
-## 👤 Author - Sushma Yarru
+## Author - Sushma Yarru
 
 Developed as a complete business-oriented machine learning solution integrating predictive analytics and AI-driven strategic recommendations.
 
 ---
 
-## 📜 License
+## License
 
 MIT License
