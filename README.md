@@ -1,180 +1,213 @@
-📊 Churn Intelligence Platform
+# 📊 Churn Intelligence Platform
 
-A business-focused AI-powered churn prediction and retention strategy platform built using Streamlit and machine learning.
+An end-to-end AI-powered churn prediction and customer retention strategy platform built using Streamlit and machine learning.
 
-This project allows organizations to analyze customer data, train predictive models, estimate revenue risk, and generate executive-level retention strategies using AI.
+This project helps businesses analyze customer data, train predictive models, evaluate performance, estimate revenue at risk, and generate executive-level retention strategies using AI.
 
-🚀 Project Overview
+---
 
-Customer churn is one of the biggest challenges for subscription-based and service-driven businesses.
+## 🚀 Project Overview
 
-This platform helps companies:
+Customer churn directly impacts revenue, growth, and long-term sustainability.  
+This platform transforms raw customer data into actionable business intelligence.
 
-Predict which customers are likely to churn
+With this application, organizations can:
 
-Understand model performance clearly
+- Upload customer datasets
+- Train multiple machine learning models
+- Evaluate model performance using business-focused metrics
+- Predict churn probability at customer level
+- Estimate financial risk exposure
+- Generate AI-driven executive retention strategies
 
-Estimate revenue at risk
+The objective is not just prediction — but **strategic decision-making support**.
 
-Segment customers based on churn probability
+---
 
-Generate AI-powered business strategy recommendations
+## 🧠 Core Features
 
-The goal is not just prediction — but actionable intelligence.
+### 1️⃣ Model Training Engine
 
-🧠 Core Features
-1️⃣ Model Training Engine
+Supports multiple machine learning algorithms:
 
-Train and evaluate multiple ML models:
+- Logistic Regression
+- Random Forest
+- XGBoost
+- Gradient Boosting
+- Extra Trees Classifier
 
-Logistic Regression
+Performance Metrics:
 
-Random Forest
+- Accuracy
+- Recall (Churn detection strength)
+- ROC-AUC Score
+- Churn Rate Calculation
+- Model Comparison
 
-XGBoost
+Session state management ensures that trained models and results remain available when navigating between pages.
 
-Gradient Boosting
+---
 
-Extra Trees
+### 2️⃣ Dashboard & Prediction Module
 
-Includes:
+- Customer-level churn probability scoring
+- Predicted churn classification
+- Revenue at risk estimation
+- Segment-based filtering (High / Medium / Low risk)
+- Clean business-ready dashboard presentation
 
-Accuracy
+Designed to give stakeholders clear and understandable insights.
 
-ROC-AUC
+---
 
-Recall (Churn detection strength)
+### 3️⃣ AI Strategy Generator
 
-Automatic churn rate calculation
+Integrated with OpenAI API to generate:
 
-2️⃣ Dashboard & Prediction
+- Executive-level churn interpretation
+- Financial impact breakdown
+- Data-driven retention strategies
+- Resource allocation recommendations
+- Risk mitigation KPIs
 
-Customer-level churn probability
+If the API is unavailable or quota is exceeded, the system safely displays a fallback message instead of throwing an error.
 
-Predicted churn label
+---
 
-Revenue at risk estimation
+## 🛠 Technology Stack
 
-Segment-based filtering
+- Python
+- Streamlit
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- OpenAI API
 
-Clean business dashboard view
+---
 
-3️⃣ AI Strategy Generator
+## 📂 Project Structure
 
-Using OpenAI API, the platform generates:
-
-Executive-level churn interpretation
-
-Financial impact explanation
-
-Targeted retention strategies
-
-Resource allocation recommendations
-
-KPI monitoring guidance
-
-If the API is not connected, the system safely shows a fallback message instead of crashing.
-
-🛠 Tech Stack
-
-Python
-
-Streamlit
-
-Pandas
-
-NumPy
-
-Scikit-learn
-
-XGBoost
-
-OpenAI API
-
-📂 Project Structure
 churn-intelligence-platform/
+
 │
-├── Home.py
-├── Strategy_and_Report.py
-├── requirements.txt
-├── README.md
+├── Home.py  
+├── Strategy_and_Report.py  
+├── requirements.txt  
+├── README.md  
 │
-├── pages/
-│   ├── 1_Model_Training.py
-│   ├── 2_Dashboard_and_Prediction.py
+├── pages/  
+│   ├── 1_Model_Training.py  
+│   ├── 2_Dashboard_and_Prediction.py  
 │
-└── .streamlit/
-    └── secrets.toml (not uploaded to GitHub)
-⚙️ Local Setup Instructions
-1. Clone Repository
+└── .streamlit/  
+    └── secrets.toml  (Not pushed to GitHub)
+
+---
+
+## ⚙️ Local Setup Instructions
+
+### 1️. Clone the Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/churn-intelligence-platform.git
 cd churn-intelligence-platform
-2. Create Virtual Environment
+```
+
+---
+
+### 2️. Create Virtual Environment
 
 Windows:
 
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
 Mac/Linux:
 
+```bash
 python3 -m venv venv
 source venv/bin/activate
-3. Install Dependencies
+```
+
+---
+
+### 3️. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-🔐 Add OpenAI API Key
+```
 
-Create a folder:
+---
 
+### 4️. Configure OpenAI API Key
+
+Create a folder named:
+
+```
 .streamlit
+```
 
-Inside it create:
+Inside it, create a file:
 
+```
 secrets.toml
+```
 
-Add:
+Add the following:
 
+```
 OPENAI_API_KEY = "your_api_key_here"
+```
 
-⚠️ Never push this file to GitHub.
+⚠️ Do NOT push this file to GitHub.
 
-▶️ Run the Application
+---
+
+### 5️. Run the Application
+
+```bash
 streamlit run Home.py
+```
 
-The app will open in your browser.
+The application will open in your browser.
 
-📈 Business Impact
+---
 
-This platform is useful for:
+## 📈 Business Applications
 
-Telecom companies
+This solution is particularly valuable for:
 
-SaaS businesses
+- Telecom companies
+- SaaS platforms
+- Subscription-based businesses
+- Fintech firms
+- Insurance providers
+- E-commerce platforms
 
-Subscription platforms
+It enables proactive retention strategies instead of reactive churn handling.
 
-Fintech companies
+---
 
-Insurance providers
+## 🔮 Future Enhancements
 
-It enables data-driven retention decisions instead of reactive churn management.
+- SHAP-based model explainability
+- Automated hyperparameter tuning
+- Advanced customer segmentation
+- Docker containerization
+- CI/CD pipeline integration
+- Cloud deployment scaling
 
-🎯 Future Improvements
+---
 
-Model explainability (SHAP integration)
+## 👤 Author - Sushma Yarru
 
-Automated hyperparameter tuning
+Developed as a complete business-oriented machine learning solution integrating predictive analytics and AI-driven strategic recommendations.
 
-Customer segmentation clustering
+---
 
-Deployment with Docker
-
-CI/CD pipeline integration
-
-👤 Author
-
-Built as an end-to-end machine learning business solution.
-
-📜 License
+## 📜 License
 
 MIT License
