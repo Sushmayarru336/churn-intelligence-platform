@@ -60,8 +60,11 @@ if st.session_state.uploaded_df is not None:
     # -----------------------------
     # TARGET COLUMN (PERSIST)
     # -----------------------------
+
     if st.session_state.target_column and st.session_state.target_column in df.columns:
-        default_target_index = list(df.columns).index(st.session_state.target_column)
+        default_target_index = list(df.columns).index(
+            st.session_state.target_column
+        )
     else:
         default_target_index = 0
 
@@ -73,19 +76,77 @@ if st.session_state.uploaded_df is not None:
 
     st.session_state.target_column = target_column
 
-    if df[target_column].dtype == "object":
-        df[target_column] = df[target_column].map({"No": 0, "Yes": 1})
+    # Show values for debugging
+    st.write("Target datatype:", df[target_column].dtype)
+    st.write("Unique values:", df[target_column].dropna().unique())
 
-    if df[target_column].dropna().nunique() == 2:
-        churn_rate = df[target_column].mean() * 100
-        st.metric("Overall Churn Rate", f"{round(churn_rate,2)}%")
-        st.session_state["churn_rate"] = churn_rate
-    else:
-        st.warning("Selected column which can be able to predict churn")
+    # Convert target to numeric safely
+
+    if not pd.api.types.is_numeric_dtype(df[target_column]):
+
+        series = (
+            df[target_column]
+            .astype(str)
+            .str.strip()
+            .str.lower()
+        )
+
+        mapping = {
+            "yes": 1,
+            "no": 0,
+            "true": 1,
+            "false": 0,
+            "churn": 1,
+            "no churn": 0,
+            "1": 1,
+            "0": 0
+        }
+
+        mapped = series.map(mapping)
+
+        # If mapping fails use factorization
+        if mapped.isnull().all():
+
+            labels, uniques = pd.factorize(series)
+
+            if len(uniques) != 2:
+                st.error(
+                    f"Selected column has {len(uniques)} classes. Please choose a binary target."
+                )
+                st.stop()
+
+            df[target_column] = labels
+
+        else:
+
+            df[target_column] = mapped
+
+
+    # Remove null values
+    df = df.dropna(subset=[target_column])
+
+    # Force integer type
+    df[target_column] = df[target_column].astype(int)
+
+    # Binary check
+    if df[target_column].nunique() != 2:
+
+        st.warning(
+            "Please select a binary churn column containing two classes only."
+        )
+
         st.stop()
 
-    df = df.dropna(subset=[target_column])
-    df[target_column] = df[target_column].astype(int)
+
+    # Churn rate
+    churn_rate = df[target_column].mean() * 100
+
+    st.metric(
+        "Overall Churn Rate",
+        f"{churn_rate:.2f}%"
+    )
+
+    st.session_state["churn_rate"] = churn_rate
 
     # -----------------------------
     # MODEL SELECTION (PERSIST)
