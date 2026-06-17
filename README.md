@@ -26,7 +26,7 @@ The objective is not just prediction — but **strategic decision-making support
 
 ## 🧠 Core Features
 
-### 1️⃣ Model Training Engine
+### 1️. Model Training Engine
 
 Supports multiple machine learning algorithms:
 
@@ -48,7 +48,7 @@ Session state management ensures that trained models and results remain availabl
 
 ---
 
-### 2️⃣ Dashboard & Prediction Module
+### 2️. Dashboard & Prediction Module
 
 - Customer-level churn probability scoring
 - Predicted churn classification
@@ -60,7 +60,7 @@ Designed to give stakeholders clear and understandable insights.
 
 ---
 
-### 3️⃣ AI Strategy Generator
+### 3️. AI Strategy Generator
 
 Integrated with OpenAI API to generate:
 
@@ -107,7 +107,7 @@ churn-intelligence-platform/
 
 ## ⚙️ Local Setup Instructions
 
-### 1️⃣ Clone the Repository
+### 1️. Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/churn-intelligence-platform.git
@@ -116,7 +116,7 @@ cd churn-intelligence-platform
 
 ---
 
-### 2️⃣ Create Virtual Environment
+### 2️. Create Virtual Environment
 
 Windows:
 
@@ -134,7 +134,7 @@ source venv/bin/activate
 
 ---
 
-### 3️⃣ Install Dependencies
+### 3️. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -142,7 +142,7 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Configure OpenAI API Key
+### 4️. Configure OpenAI API Key
 
 Create a folder named:
 
@@ -164,7 +164,7 @@ OPENAI_API_KEY = "your_api_key_here"
 
 ---
 
-### 5️⃣ Run the Application
+### 5️. Run the Application
 
 ```bash
 streamlit run Home.py
@@ -200,12 +200,12 @@ It enables proactive retention strategies instead of reactive churn handling.
 
 ---
 
-## 👤 Author - Sushma Yarru
+## Author - Sushma Yarru
 
 Developed as a complete business-oriented machine learning solution integrating predictive analytics and AI-driven strategic recommendations.
 
 ---
 
-## 📜 License
+## License
 
 MIT License
